@@ -3,27 +3,25 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <div layout:fragment="content">
-    <div class="container-md p-6 border border-dark rounded my-4">
-        <img alt="SDG 2" class="border border-dark rounded" src="/images/SDG%202.jpg"
-             style="height:120px;">
-        <div class="row text-center">
-            <div class="col-md-2"></div>
+    <div class="container-md border border-dark rounded my-4 p-3">
+        <div class="d-flex align-items-center"> <!-- Flexbox voor horizontale uitlijning en verticale centrering -->
 
-            <div class="col-md-8 border border-dark card-body rounded-pill d-flex flex-column align-items-center">
-
-                <!-- Titel + afbeelding naast elkaar -->
-                <div class="d-flex align-items-center mb-2">
-
-                    <h1 class="me-3 mb-0">Boodsch(App)</h1>
-
-                </div>
-
-                <!-- Subtitel -->
-                <h2 class="mb-0">SDG 2: No Hunger.</h2>
-
+            <!-- Afbeelding -->
+            <div class="flex-shrink-0">
+                <img alt="SDG 2"
+                     class="border border-dark rounded-0"
+                     src="/images/SDG%202.jpg"
+                     style="height:140px;">
             </div>
 
-            <div class="col-md-2"></div>
+            <!-- Titel en subtitel -->
+            <div class="flex-grow-1 text-center ms-3"> <!-- ms-3 geeft ruimte tussen afbeelding en tekst -->
+                <div class="border border-dark card-body rounded-pill py-2">
+                    <h1 class="mb-0">Boodsch(App)</h1>
+                    <h2 class="mb-0">SDG 2: No Hunger.</h2>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -36,7 +34,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <a class="btn btn-dark w-100 h-100 rounded-pill fs-4 d-flex justify-content-center align-items-center"
-                   th:href="@{/table}" type="button"><i class="bi bi-play"></i></a>
+                   th:href="@{/Table}" type="button"><i class="bi bi-play"></i></a>
             </div>
         </div>
     </div>

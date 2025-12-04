@@ -1,15 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>Product Overzicht</title>
+    <style>
+        body {
+            background-color: #f2f2f2; /* lichtgrijs */
+            font-family: Arial, sans-serif;
+            color: #000;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        tr:hover {
+            background: #e6e6e6;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
 <div layout:fragment="content">
-    <div class="container-md p-6 border border-dark rounded my-4">
-        <div class="row text-center">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 border border-dark card-body rounded-pill">
-                <H2> SDG 2: No Hunger.</H2>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
+
+    <h1>Product Overzicht</h1>
+
+    <table>
+        <tr>
+            <th>ProductCode</th>
+            <th>Naam</th>
+            <th>Categorie</th>
+            <th>Originele Prijs</th>
+            <th>Afgekorte Prijs</th>
+            <th>Beschrijving</th>
+        </tr>
+
+        <tr th:each="product : ${products}">
+            <td th:text="${product.productcode}"></td>
+            <td th:text="${product.naam}"></td>
+            <td th:text="${product.categorie}"></td>
+            <td th:text="${product.originele_prijs}"></td>
+            <td th:text="${product.afgekorte_prijs}"></td>
+            <td th:text="${product.beschrijving}"></td>
+        </tr>
+    </table>
+
 </div>
+</body>
 </html>
