@@ -53,15 +53,24 @@
             <th>Originele Prijs</th>
             <th>Afgekorte Prijs</th>
             <th>Beschrijving</th>
+            <th>Actie</th>
         </tr>
 
         <tr th:each="product : ${products}">
             <td th:text="${product.productcode}"></td>
             <td th:text="${product.naam}"></td>
             <td th:text="${product.categorie}"></td>
-            <td th:text="${product.originele_prijs}"></td>
-            <td th:text="${product.afgekorte_prijs}"></td>
+            <!-- CamelCase property names -->
+            <td th:text="${product.originelePrijs}"></td>
+            <td th:text="${product.afgekortePrijs}"></td>
             <td th:text="${product.beschrijving}"></td>
+
+            <td>
+                <a class="btn btn-dark"
+                   th:href="@{'/product/' + ${product.productcode}}">
+                    Bekijk
+                </a>
+            </td>
         </tr>
     </table>
 

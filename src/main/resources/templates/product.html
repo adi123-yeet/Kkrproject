@@ -1,0 +1,16 @@
+<div class="container mt-4">
+    <h1 th:text="${product.naam}"></h1>
+    <p th:text="${product.beschrijving}"></p>
+
+    <h3>Prijs: €<span th:text="${product.afgekortePrijs}"></span></h3>
+
+    <p>
+        Voorraad:
+        <strong th:text="${stock}">0</strong> stuks
+    </p>
+
+    <a th:href="@{'/product/' + ${product.productcode} + '/stores'}"
+       class="btn btn-dark">
+        Bekijk winkels & regio's
+    </a>
+</div>

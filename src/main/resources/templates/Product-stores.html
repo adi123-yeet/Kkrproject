@@ -1,0 +1,25 @@
+<div class="container mt-4">
+
+    <h2>
+        Winkels voor: <span th:text="${product.naam}"></span>
+    </h2>
+
+    <table class="table table-bordered mt-3">
+        <thead>
+        <tr>
+            <th>Winkel</th>
+            <th>Locatie / Regio</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="store : ${stores}">
+            <td th:text="${store.naam}"></td>
+            <td th:text="${store.locatie}"></td>
+            <td th:text="${store.type}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

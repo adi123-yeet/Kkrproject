@@ -10,10 +10,11 @@ public class Product {
     private int productcode;
     private String naam;
     private String categorie;
-    private int originele_prijs;
-    private int afgekorte_prijs;
+    private int originelePrijs;
+    private int afgekortePrijs;
     private String beschrijving;
 
+    // Getter & Setter voor productcode
     public int getProductcode() {
         return productcode;
     }
@@ -22,6 +23,7 @@ public class Product {
         this.productcode = productcode;
     }
 
+    // Getter & Setter voor naam
     public String getNaam() {
         return naam;
     }
@@ -30,6 +32,7 @@ public class Product {
         this.naam = naam;
     }
 
+    // Getter & Setter voor categorie
     public String getCategorie() {
         return categorie;
     }
@@ -38,22 +41,25 @@ public class Product {
         this.categorie = categorie;
     }
 
-    public int getOriginele_prijs() {
-        return originele_prijs;
+    // Getter & Setter voor originelePrijs
+    public int getOriginelePrijs() {
+        return originelePrijs;
     }
 
-    public void setOriginele_prijs(int originele_prijs) {
-        this.originele_prijs = originele_prijs;
+    public void setOriginelePrijs(int originelePrijs) {
+        this.originelePrijs = originelePrijs;
     }
 
-    public int getAfgekorte_prijs() {
-        return afgekorte_prijs;
+    // Getter & Setter voor afgekortePrijs
+    public int getAfgekortePrijs() {
+        return afgekortePrijs;
     }
 
-    public void setAfgekorte_prijs(int afgekorte_prijs) {
-        this.afgekorte_prijs = afgekorte_prijs;
+    public void setAfgekortePrijs(int afgekortePrijs) {
+        this.afgekortePrijs = afgekortePrijs;
     }
 
+    // Getter & Setter voor beschrijving
     public String getBeschrijving() {
         return beschrijving;
     }
