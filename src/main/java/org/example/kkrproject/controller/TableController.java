@@ -14,7 +14,7 @@ public class TableController {
         this.tableRepo = tableRepo;
     }
 
-    @GetMapping("/Table")
+    @GetMapping("/Tablepage")
     public String showProducts(Model model) {
         model.addAttribute("products", tableRepo.findAll());
         return "Tablepage"; // verwijst naar products.html
