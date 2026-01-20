@@ -1,9 +1,12 @@
 package org.example.kkrproject.service;
 
 import lombok.RequiredArgsConstructor;
+import org.example.kkrproject.model.VoorraadProduct;
 import org.example.kkrproject.repository.VoorraadProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
@@ -18,6 +21,11 @@ public class VoorraadService {
                 .mapToInt(vp -> vp.getVoorraad().getAantal())
                 .sum();
     }
+
+    public List<VoorraadProduct> getVoorraadMetHoudbaarheid(Integer productcode) {
+        return voorraadProductRepo.findByProduct_Productcode(productcode);
+    }
+
 
     @Transactional
     public void verlaagVoorraadMetEen(Integer productcode) {

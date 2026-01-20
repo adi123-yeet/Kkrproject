@@ -28,6 +28,46 @@
                 Voorraad:
                 <strong class="text-primary" th:text="${stock}">0</strong> stuks
             </p>
+            <div class="mt-4">
+                <h4 class="fw-semibold mb-3">Batch:</h4>
+
+                <table class="table table-bordered table-striped align-middle">
+                    <thead class="table-gray">
+                    <tr>
+                        <th>Leverdatum</th>
+                        <th>Vervaldatum</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="vp : ${voorraadLijst}">
+
+                        <td th:text="${#dates.format(
+                vp.voorraad.houdbaarheid.leverdatum,
+                'dd-MM-yyyy')}">
+                        </td>
+
+                        <td th:text="${#dates.format(
+                vp.voorraad.houdbaarheid.vervaldatum,
+                'dd-MM-yyyy')}">
+                        </td>
+
+                        <td>
+                <span th:if="${vp.voorraad.houdbaarheid.isverlopen}"
+                      class="badge bg-danger">
+                    Verlopen
+                </span>
+                            <span th:unless="${vp.voorraad.houdbaarheid.isverlopen}"
+                                  class="badge bg-success">
+                    Geldig
+                </span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
 
             <a th:href="@{'/product/' + ${product.productcode} + '/stores'}"
                class="btn btn-dark btn-lg mt-3 px-4 py-2 rounded-3">
